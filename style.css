@@ -1,0 +1,251 @@
+/* ===== GLOBAL CYBERPUNK THEME ===== */
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0d0c1d;
+    color: #e2e8f0;
+}
+
+/* NEON GLOW TEXT */
+.neon {
+    text-shadow: 0 0 8px #ff00ea, 0 0 12px #ff00ea, 0 0 20px #ff00ea;
+}
+
+/* ===== HEADER CYBER ===== */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 30px;
+    background: rgba(20, 20, 35, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 0, 221, 0.3);
+    box-shadow: 0 0 12px rgba(0, 255, 247, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+/* Logo with neon border */
+.logo {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-image: url("assets/ahay.jpg");
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #00f0ff;
+    box-shadow: 0 0 15px #00f0ff;
+    animation: softSpin 1.5s ease-out;
+}
+
+/* ===== NAVBAR CYBER ===== */
+nav a {
+    margin-left: 12px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    color: #d5d5ff;
+    font-weight: 600;
+    transition: 0.2s ease;
+    border: 1px solid rgba(0, 255, 247, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+nav a:hover {
+    background: #ff00ea;
+    color: white;
+    box-shadow: 0 0 18px #ff00ea;
+    transform: translateY(-3px);
+}
+
+/* ===== CYBER SECTION ===== */
+section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    animation: fadeIn 1s ease;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #00eaff;
+    text-shadow: 0 0 20px #00eaff;
+}
+
+/* ===== HOMEPAGE CYBER BOX ===== */
+#home-page {
+    min-height: 450px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #ff00ea55, #00eaff55);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 0, 221, 0.4);
+    box-shadow: 0 0 25px rgba(0, 255, 247, 0.3);
+}
+
+/* ===== FORM ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid #ff00ea55;
+    box-shadow: 0 0 22px #ff00ea55;
+    backdrop-filter: blur(6px);
+}
+
+input, textarea {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid #00eaff88;
+    padding: 10px;
+    border-radius: 12px;
+    color: #e2e8f0;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff00ea;
+    box-shadow: 0 0 12px #ff00ea;
+}
+
+/* Button neon */
+button {
+    background: #00eaff;
+    color: #0d0c1d;
+    font-weight: 700;
+    padding: 12px 0;
+    border-radius: 12px;
+    transition: 0.2s;
+    box-shadow: 0 0 18px #00eaff;
+}
+
+button:hover {
+    background: #ff00ea;
+    color: white;
+    box-shadow: 0 0 22px #ff00ea;
+    transform: translateY(-3px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 0, 221, 0.2);
+    text-align: center;
+    border-radius: 14px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 0 16px rgba(255, 0, 221, 0.5);
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes softSpin {
+    0% { transform: rotate(0deg) scale(0.8); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+/* ===== GLITCH EFFECT ===== */
+.glitch-text {
+    position: relative;
+    color: #00eaff;
+    animation: glitch 1.5s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.glitch-text::before {
+    color: #ff00ea;
+    animation: glitch-before 2s infinite;
+}
+
+.glitch-text::after {
+    color: #00ffea;
+    animation: glitch-after 1.5s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 0 #ff00ea; }
+    20% { text-shadow: -2px 0 #00eaff; }
+    40% { text-shadow: 2px 0 #ff00ea; }
+    60% { text-shadow: -2px 0 #00eaff; }
+    100% { text-shadow: 2px 0 #ff00ea; }
+}
+
+@keyframes glitch-before {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, -2px); }
+    40% { transform: translate(2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes glitch-after {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(2px, -2px); }
+    40% { transform: translate(-2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+/* ===== NEON CURSOR ===== */
+body {
+    cursor: none;
+}
+
+#neon-cursor {
+    position: fixed;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #00eaff;
+    box-shadow: 0 0 18px #00eaff, 0 0 30px #00eaff;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.07s linear;
+    z-index: 9999;
+}
+/* ===== MOVING NEON BACKGROUND ===== */
+body {
+    background: linear-gradient(120deg, #0d0c1d, #14021a, #001b33);
+    background-size: 300% 300%;
+    animation: bgmove 10s infinite alternate ease-in-out;
+}
+
+@keyframes bgmove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+#home-page {
+    position: relative;
+    overflow: hidden;
+}
+
+#home-page::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #ff00ea, #00eaff, #ff00ea);
+    top: 0;
+    left: -100%;
+    animation: borderRun 3s linear infinite;
+}
+
+@keyframes borderRun {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
